@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  jenkins-master:
+    image: jenkins/jenkins:lts
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+
+  jenkins-slave:
+    image: jenkins-slave
+    deploy:
+      replicas: 2
+      mode: replicated
+
+volumes:
+  jenkins_home:
