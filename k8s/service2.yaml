@@ -1,13 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: "2024-05-29T06:31:20Z"
   labels:
     app: nginx-deployment
   name: nginx-deployment
   namespace: namespace2
-  resourceVersion: "1249"
-  uid: f135161b-3bf0-4820-8188-7bcd3925ba54
 spec:
   clusterIP: 10.97.196.131
   externalTrafficPolicy: Cluster
@@ -30,5 +27,3 @@ spec:
     app: nginx-deployment
   sessionAffinity: None
   type: NodePort
-status:
-  loadBalancer: {}
